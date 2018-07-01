@@ -1,6 +1,3 @@
-// Select color input
-const colorPicker = $("#colorPicker").val();
-
 // When size is submitted by the user, call makeGrid()
 $("#sizePicker").submit(function (e) {
 	e.preventDefault();
@@ -27,4 +24,13 @@ function makeGrid() {
 		}
 		$("table").prepend(row);
 	}
+
+	$("#pixelCanvas tr td").click(function () {
+		const colorPicker = $("#colorPicker").val();
+
+		var aa = $(this).attr("id");
+		$("#"+aa).css({ "background-color": colorPicker })
+		console.log(aa)
+	})
 }
+
